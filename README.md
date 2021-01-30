@@ -7,10 +7,6 @@
     mkdir $HOME/.dotfiles
     git init --bare $HOME/.dotfiles/
 
-### Clone
-
-    git clone --bare git@github.com:rodixxi/dotfiles.git $HOME/.dotfiles
-
 ### Create
 
     alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
@@ -33,3 +29,11 @@
 
     dotfiles remote add dotfiles git@github.com:rodixxi/dotfiles.git
     dotfiles push --set-upstream dotfiles master
+    
+### New Machine
+
+    alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+    echo ".cfg" >> $HOME/.gitignore
+    git clone --bare git@github.com:rodixxi/dotfiles.git $HOME/.dotfiles
+    config checkout
+
